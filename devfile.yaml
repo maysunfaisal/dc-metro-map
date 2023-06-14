@@ -8,7 +8,7 @@ metadata:
   projectType: "nodejs"
   language: "nodejs"
   attributes:
-    alpha.dockerimage-port: 3001
+    alpha.dockerimage-port: 3000
   provider: Red Hat
   supportUrl: https://github.com/devfile-samples/devfile-support#support-information
 parent:
@@ -25,6 +25,10 @@ components:
   - name: outerloop-deploy
     kubernetes:
       uri: deploy.yaml
+      endpoints:
+        - name: http-3000
+          targetPort: 3000
+          path: /
 commands:
   - id: build-image
     apply:
