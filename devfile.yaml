@@ -24,7 +24,7 @@ components:
         rootRequired: false
   - name: outerloop-deploy
     kubernetes:
-      uri: outerloop-deploy.yaml
+      uri: deploy.yaml
 commands:
   - id: build-image
     apply:
